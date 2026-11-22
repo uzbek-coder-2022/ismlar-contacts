@@ -1,0 +1,45 @@
+# ===== Maxfiy kalitlar (HECH QACHON GitHub'ga yuklamang) =====
+.env
+.env.*
+!.env.example
+credentials.json
+token.json
+*.session
+*.session-journal
+
+# ===== Shaxsiy ma'lumotlar (kontaktlar, telefon raqamlari) =====
+contacts_original.json
+contacts_backup.json
+contacts_*.json
+backups/
+google_backups/
+contacts.csv
+*_tuzatilgan*.csv
+*_ozgarishlar*.csv
+*.vcf
+
+# ===== Saytlardan yig'ilgan xom ma'lumot (ma'nolar matni boshqa saytlarga tegishli) =====
+data/ismlar_hammasi_toliq.csv
+data/ismlar_hammasi*.csv
+
+# ===== Skript natijalari / loglar =====
+problems_report.txt
+yuklanmagan_sahifalar.txt
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# ===== IDE va tizim fayllari =====
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

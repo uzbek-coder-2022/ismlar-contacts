@@ -1,0 +1,6 @@
+telethon
+requests
+beautifulsoup4
+# Google Contacts uchun:
+google-api-python-client
+google-auth-oauthlib

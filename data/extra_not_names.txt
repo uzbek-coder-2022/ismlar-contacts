@@ -1,0 +1,4 @@
+# Ism EMAS so'zlar (xizmat, qarindosh, lavozim ...). Bu so'zlarga "xon" qo'shilmaydi va ular ism deb olinmaydi.
+# Masalan:
+# usluga
+# pochta

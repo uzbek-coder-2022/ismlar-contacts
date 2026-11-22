@@ -1,0 +1,4 @@
+# Bazada yo'q qiz ismlarini shu yerga yozing (har qatorda bitta). Apostrof va harf turi muhim emas.
+# Masalan:
+# Zorinta
+# Sevin'bika
