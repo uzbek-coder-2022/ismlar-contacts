@@ -100,6 +100,18 @@ class TestProcess(unittest.TestCase):
             f.write("# izoh\nZorinta\nSevin'bika  # sharh\n")
         self.assertEqual(nl.load_extra("x.txt", d), {nl.name_key("Zorinta"), nl.name_key("Sevin'bika")})
 
+    def test_extra_overrides_ambiguous(self):
+        k = nl.name_key("Bahor")                      # bazada ikkala jinsda ham bor
+        self.assertEqual(nl.db_gender("Bahor"), "u")
+        nl.EXTRA_GIRL_KEYS.add(k)
+        try:
+            self.assertEqual(nl.db_gender("Bahor"), "f")
+            nl.EXTRA_BOY_KEYS.add(k)                  # ikkala faylda bo'lsa - yana noaniq
+            self.assertEqual(nl.db_gender("Bahor"), "u")
+        finally:
+            nl.EXTRA_GIRL_KEYS.discard(k)
+            nl.EXTRA_BOY_KEYS.discard(k)
+
     # --- kirill
     def test_cyrillic(self):
         f, l, _ = nl.process_contact("Мадина", "Акбарова")

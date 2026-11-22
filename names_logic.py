@@ -125,8 +125,10 @@ def load_extra(filename, directory=DATA_DIR):
 
 
 NOT_KEYS |= load_extra("extra_not_names.txt")          # ism emas (data/extra_not_names.txt)
-GIRL_KEYS = (load_names("girl_names.json") | load_extra("extra_girl_names.txt")) - NOT_KEYS
-BOY_KEYS = (load_names("boy_names.json") | load_extra("extra_boy_names.txt")) - NOT_KEYS
+EXTRA_GIRL_KEYS = load_extra("extra_girl_names.txt") - NOT_KEYS
+EXTRA_BOY_KEYS = load_extra("extra_boy_names.txt") - NOT_KEYS
+GIRL_KEYS = (load_names("girl_names.json") | EXTRA_GIRL_KEYS) - NOT_KEYS
+BOY_KEYS = (load_names("boy_names.json") | EXTRA_BOY_KEYS) - NOT_KEYS
 
 
 # ---------------------------------------------------------------- yordamchi funksiyalar
@@ -157,6 +159,11 @@ def db_gender(name: str):
     for kk in (k, k[:-3] if k.endswith("hon") else None):
         if not kk:
             continue
+        # qo'lda kiritilgan (extra_*.txt) ustun turadi: faqat bitta faylda bo'lsa, bazadagi noaniqlik e'tiborga olinmaydi
+        if kk in EXTRA_GIRL_KEYS and kk not in EXTRA_BOY_KEYS:
+            return "f"
+        if kk in EXTRA_BOY_KEYS and kk not in EXTRA_GIRL_KEYS:
+            return "m"
         g, b = kk in GIRL_KEYS, kk in BOY_KEYS
         if g and b:
             return "u"

@@ -11,6 +11,8 @@ Jinsni aniqlash tartibi: ism bazasi -> familiya qo'shimchasi (`-ova/-eva` = qiz,
 Bazada yo'q va familiya ham dalil bermasa, "xon" **qo'shilmaydi** (ism oxiriga qarab taxmin qilinmaydi,
 shuning uchun `Usluga`, `Pochta`, `Melodiya` kabi so'zlar o'zgarmaydi).
 
+Ism ikkala ro'yxatda ham bo'lsa (noaniq), "xon" qo'shilmaydi. Uni `extra_girl_names.txt` ga yozsangiz qiz, `extra_boy_names.txt` ga yozsangiz o'g'il bola deb olinadi (qo'lda kiritilgan bazadan ustun).
+
 Bazada yo'q ismlarni `data/extra_girl_names.txt` / `data/extra_boy_names.txt` ga (har qatorda bittadan),
 ism bo'lmagan so'zlarni `data/extra_not_names.txt` ga yozing - kodni tahrirlash shart emas.
 
@@ -89,5 +91,5 @@ Faqat Google akkauntiga sinxronlangan kontaktlar o'zgaradi (telefon xotirasidagi
 o'z ichiga oladi. `.gitignore` ularni chiqarib tashlaydi - ularni hech qachon GitHub'ga yuklamang.
 
 ## Ma'lumotlar
-`data/boy_names.json` va `data/girl_names.json` - ommaviy saytlardan yig'ilgan ismlar ro'yxati (faqat ismlar, ma'nolarsiz).
+`data/boy_names.json` va `data/girl_names.json` - ommaviy saytlardan yig'ilgan ismlar ro'yxati (faqat ismlar, ma'nolarsiz). Hozir ~13 400 o'g'il va ~7 000 qiz ismi.
 Saytlarga og'irlik tushirmaslik uchun `ismlar_yigish.py` so'rovlar orasida kutadi; saytlarning foydalanish shartlariga rioya qiling.
